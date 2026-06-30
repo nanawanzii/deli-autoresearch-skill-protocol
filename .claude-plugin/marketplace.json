@@ -1,0 +1,26 @@
+{
+  "name": "deli-autoresearch",
+  "owner": {
+    "name": "princewwang"
+  },
+  "metadata": {
+    "description": "Deli AutoResearch — a protocol harness for long-horizon autonomous research and agent loops."
+  },
+  "plugins": [
+    {
+      "name": "deli-autoresearch",
+      "source": "./",
+      "description": "Protocol harness for long-horizon autonomous tasks: persisted state, direction diversity, stall detection, orchestrator/worker separation, heartbeat watchdog.",
+      "version": "0.1.0",
+      "license": "MIT",
+      "category": "workflow",
+      "keywords": [
+        "autonomous",
+        "long-horizon",
+        "agent-harness",
+        "anti-loop",
+        "heartbeat-watchdog"
+      ]
+    }
+  ]
+}

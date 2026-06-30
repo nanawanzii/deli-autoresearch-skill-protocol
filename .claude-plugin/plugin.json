@@ -1,0 +1,28 @@
+{
+  "name": "deli-autoresearch",
+  "source": "./",
+  "description": "Protocol harness for long-horizon autonomous tasks. Targets cognitive loops, stalling, and silent loop death via persisted state, enforced direction diversity, quantitative stall detection, orchestrator/worker separation, and a heartbeat watchdog.",
+  "version": "0.1.0",
+  "author": {
+    "name": "princewwang"
+  },
+  "license": "MIT",
+  "keywords": [
+    "autonomous",
+    "long-horizon",
+    "agent-harness",
+    "anti-loop",
+    "heartbeat-watchdog",
+    "orchestration",
+    "unattended",
+    "research"
+  ],
+  "category": "workflow",
+  "tags": [
+    "autonomous",
+    "loop",
+    "watchdog",
+    "multi-agent",
+    "stall-detection"
+  ]
+}
