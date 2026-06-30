@@ -1,27 +1,29 @@
 # Deli AutoResearch
 
-A protocol harness for **long-horizon autonomous tasks** (hours to days). It ships no executable code — it prescribes battle-tested conventions for state persistence, stall detection, direction diversity, and watchdog recovery so an agent loop can run unattended without falling into cognitive loops, stalling on "should I continue?", or dying silently.
+[English](./README.md) | [简体中文](./README.zh-CN.md)
 
-## Why
+A set of conventions for running an agent loop unattended for hours or days. There's no code here — just a skill that tells the agent how to keep its state in files, try a different approach when it gets stuck, and recover when the loop dies.
 
-Long-running agents fail in three recurring ways:
+## The problem
 
-1. **Cognitive loop** — same direction retried with diminishing returns.
-2. **Stalling** — agent finishes a chunk, summarizes, and waits forever.
-3. **Runtime fragility** — context compaction or session close kills the loop silently.
+Leave an agent running on its own long enough and it tends to fail in one of three ways:
 
-The root cause is missing engineering scaffolding, not model capability. This harness supplies that scaffolding.
+1. It keeps trying the same approach and getting less out of it each time.
+2. It finishes a piece of work, writes a summary, and then just sits there waiting.
+3. The session closes or the context gets compacted, and the loop quietly stops with no error.
+
+None of these are about the model being weak. They happen because nobody wired up the plumbing to keep the loop honest and alive. That plumbing is what this skill describes.
 
 ## What's inside
 
-A single skill — `deli-autoresearch` — defining:
+One skill — `deli-autoresearch`. It covers:
 
-- A zero-interaction behavioral contract
-- A state/log file layout (`progress.json`, `findings.jsonl`, `directions_tried.json`, ...)
-- Orchestrator / worker / heartbeat prompt templates
-- Quantitative stall detection and "pivot structure, not tactics" rules
-- Direction-diversity enforcement
-- Subagent scheduling patterns, validation, and escalation rules
+- The rule that, once started, the agent runs without stopping to ask questions
+- Which files hold state and logs (`progress.json`, `findings.jsonl`, `directions_tried.json`, and so on)
+- Prompts for the orchestrator, the workers, and the heartbeat watchdog
+- How to tell the loop is stuck by counting results, not by asking the model how it's doing
+- How to make each new attempt structurally different from the last
+- How to schedule subagents, validate their output, and escalate when blocked
 
 ## Install
 
@@ -46,7 +48,7 @@ Invoke the skill when starting an unattended long-horizon task:
 /skill deli-autoresearch
 ```
 
-Then initialize a task directory, write `task_spec.md`, start the orchestrator loop and an independent heartbeat watchdog. See the skill body for full templates.
+Then set up a task directory, write `task_spec.md`, start the orchestrator loop, and start a separate heartbeat watchdog alongside it. The skill body has the full prompts and file formats.
 
 ## License
 

@@ -7,9 +7,9 @@ description: Use when running long-horizon autonomous research, writing, explora
 
 ## Overview
 
-Deli AutoResearch is a protocol harness for long-horizon autonomous tasks. It turns a loose agent loop into an engineered system with persisted state, enforced direction diversity, quantitative stall detection, and watchdog recovery.
+Deli AutoResearch is a set of conventions for running a long, unattended agent task. Instead of leaving the loop to manage itself, you keep its state in files, make each round try something genuinely different, decide whether it's stuck by counting results, and run a separate heartbeat watchdog that restarts the loop if it dies.
 
-Core principle: **do not trust a long-running agent to remember, self-evaluate, or stay alive. Externalize state, separate workers from evaluators, and restart from curated files.**
+Core principle: **don't trust a long-running agent to remember, grade itself, or stay alive. Keep state outside the chat, keep the worker and the thing that judges it separate, and restart from files you control.**
 
 ## When to Use
 
@@ -299,6 +299,6 @@ Needed human input or authorization: ...
 3. Write `task_spec.md` with goal, allowed actions, validation, and stop conditions.
 4. Initialize `progress.json`, `findings.jsonl`, `directions_tried.json`, and `iteration_log.jsonl`.
 5. Start orchestrator loop.
-6. Start independent heartbeat.
+6. Start a separate heartbeat watchdog.
 7. Validate after every iteration.
 8. Escalate instead of silently abandoning blocked work.
