@@ -2,6 +2,8 @@
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
+The is based on Deli_AutoResearch(https://victorchen96.github.io/auto_research/framework.html)
+
 A set of conventions for running an agent loop unattended for hours or days. There's no code here — just a skill that tells the agent how to keep its state in files, try a different approach when it gets stuck, and recover when the loop dies.
 
 ## The problem
