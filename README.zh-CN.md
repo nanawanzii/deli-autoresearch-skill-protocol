@@ -2,7 +2,7 @@
 
 [English](./README.md) | 简体中文
 
-总结https://victorchen96.github.io/auto_research/framework.html的Skill
+基于https://victorchen96.github.io/auto_research/framework.html 制作的Skill
 
 一套让 agent 循环可以无人值守跑上几小时到几天的约定。这个仓库里没有代码——只有一个 skill，告诉 agent 怎么把状态写进文件、卡住时换个不一样的思路、以及循环死掉后怎么被拉起来。
 
