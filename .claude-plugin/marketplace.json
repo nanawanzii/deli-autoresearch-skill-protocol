@@ -4,13 +4,13 @@
     "name": "princewwang"
   },
   "metadata": {
-    "description": "Deli AutoResearch — a protocol harness for long-horizon autonomous research and agent loops."
+    "description": "Deli AutoResearch — conventions for running unattended agent loops for hours or days."
   },
   "plugins": [
     {
       "name": "deli-autoresearch",
       "source": "./",
-      "description": "Protocol harness for long-horizon autonomous tasks: persisted state, direction diversity, stall detection, orchestrator/worker separation, heartbeat watchdog.",
+      "description": "Conventions for running an agent loop unattended: state in files, a different approach each round, stall detection by counting, orchestrator/worker separation, and a heartbeat watchdog.",
       "version": "0.1.0",
       "license": "MIT",
       "category": "workflow",
