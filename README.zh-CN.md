@@ -27,10 +27,9 @@
 
 ## 安装
 
-把这个仓库加成 plugin marketplace，再装：
+直接装：
 
 ```text
-/plugin marketplace add <your-git-url>
 /plugin install deli-autoresearch@deli-autoresearch
 ```
 

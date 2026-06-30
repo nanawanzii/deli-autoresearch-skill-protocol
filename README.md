@@ -27,10 +27,9 @@ One skill — `deli-autoresearch`. It covers:
 
 ## Install
 
-Add this repo as a plugin marketplace, then install:
+Install directly:
 
 ```text
-/plugin marketplace add <your-git-url>
 /plugin install deli-autoresearch@deli-autoresearch
 ```
 
